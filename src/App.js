@@ -47,7 +47,7 @@ function App() {
         <div className="container-fluid bg-primary-subtle p-4" style={{ height: "100vh" }}>
             <h1 className="text-center text-success">Chat Application</h1>
 
-            <div className="container mt-4 bg-info rounded-1 px-4 py-5" style={{ width: "600px" }}>
+            <div className="container mt-4 bg-info rounded-1 px-4 py-5" style={{ width: "50%" }}>
                 <div className="mb-4">
                     <label className="form-label mb-2">Username</label>
                     <input
