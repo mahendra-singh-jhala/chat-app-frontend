@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: url("./assets/loginbg.png") no-repeat center center;
+    background-size: cover;
+    height: 100vh; 
+    margin: 0;
+}
