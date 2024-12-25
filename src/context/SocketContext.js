@@ -10,25 +10,28 @@ const SocketContextProvider = ({ children}) => {
     const { auth } = useAuth();
 
     useEffect(() => {
-        if(auth) {
-            const socket = io("https://chat-app-backend-gsxr.onrender.com", {
+        let socketInstance = null;
+
+        if (auth) {
+            socketInstance = io("https://chat-app-backend-gsxr.onrender.com", {
                 query: {
-                    userId: auth.user.userId
-                }
-            })
+                    userId: auth.user.userId,
+                },
+            });
 
-            setSocket(socket);
-            socket.on("getOnlineUser", (users) => {
-                setOnlineUser(users)
-            })
-
-            return () => socket.close()
-        } else {
-            if(socket) {
-                socket.close();
-                setSocket(null)
-            }
+            setSocket(socketInstance);
+            socketInstance.on("getOnlineUser", (users) => {
+                setOnlineUser(users);
+            });
         }
+
+        return () => {
+            if (socketInstance) {
+                socketInstance.close();
+            }
+            setSocket(null);
+        };
+        
     }, [auth])
     
     return (
