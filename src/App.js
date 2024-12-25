@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Login from "./pages/auth/Login"
 import Signup from "./pages/auth/Signup"
 import Home from "./pages/Home";
 import { Toaster } from "react-hot-toast"
-// import { useAuth } from "./context/AuthContext";
 
 
 function App() {

@@ -1,7 +1,7 @@
 import { FaSearch } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import Conversation from "./Conversation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useConversation } from "../../context/ConversationContext";
 import toast from "react-hot-toast"
 import { useAuth } from "../../context/AuthContext";

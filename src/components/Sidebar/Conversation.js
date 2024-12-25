@@ -26,7 +26,7 @@ const Conversation = () => {
             }
         };
         getConversations();
-    }, [token]);
+    }, [token, setConversations]);
 
     const handleSelectConversation = (conversation) => {
         setSelectedConversation(conversation);

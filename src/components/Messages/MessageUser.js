@@ -14,7 +14,7 @@ const MessageUser = ({ message, auth, selectedConversation }) => {
         <div className="flex flex-col">
             <div className={`flex gap-2 ${chatClassName}`}>
                 {!fromMe && (
-                    <img className="w-10 h-10 rounded-full" src={profilePicture} alt="User image" />
+                    <img className="w-10 h-10 rounded-full" src={profilePicture} alt="UserImage" />
                 )}
                 <div
                     className={`flex flex-col max-w-[75%] py-2 px-4 rounded-lg shadow-md ${
@@ -24,7 +24,7 @@ const MessageUser = ({ message, auth, selectedConversation }) => {
                     <p className="text-sm text-white">{message.message}</p>
                 </div>
                 {fromMe && (
-                    <img className="w-10 h-10 rounded-full" src={profilePicture} alt="User image" />
+                    <img className="w-10 h-10 rounded-full" src={profilePicture} alt="UserImage" />
                 )}
             </div>
             <span

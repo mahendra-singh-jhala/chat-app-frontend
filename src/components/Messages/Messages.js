@@ -29,7 +29,7 @@ const Messages = () => {
         };
 
         if (selectedConversation?._id) getMessages();
-    }, [selectedConversation]);
+    }, [token, setMessages, selectedConversation]);
 
     // Socket listener for new messages
     useEffect(() => {
