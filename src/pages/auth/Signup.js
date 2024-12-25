@@ -15,7 +15,6 @@ const Signup = () => {
         e.preventDefault();
         
         const user = { username, firstname, lastname, password, gender }
-
         try {
             const res = await axios.post("https://chat-app-backend-gsxr.onrender.com/api/auth/signup", user, {
                 headers: {
@@ -40,7 +39,6 @@ const Signup = () => {
             } 
         }
     }
-
 
     return (
         <div className="flex flex-col items-center justify-center min-w-96 mx-auto">

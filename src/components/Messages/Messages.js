@@ -12,8 +12,7 @@ const Messages = () => {
     const { auth } = useAuth();
     const { socket } = useSocket();
 
-    const token = auth.token;
-
+    const token = auth.token
     useEffect(() => {
         const getMessages = async () => {
             try {

@@ -11,7 +11,6 @@ const MessageInput = () => {
     const [message, setMessage] = useState("");
 
     const token = auth.token;
-
     const sendMessage = async (message) => {
         try {
             const res = await axios.post(
