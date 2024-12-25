@@ -29,7 +29,8 @@ const SocketContextProvider = ({ children}) => {
                 setSocket(null)
             }
         }
-    }, [auth])
+    }, [auth, socket])
+    
     return (
         <SocketContext.Provider value={{
             socket,
