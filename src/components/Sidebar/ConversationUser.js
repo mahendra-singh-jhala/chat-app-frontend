@@ -4,7 +4,7 @@ const ConversationUser = ({ conversation, isSelected, isOnline, onSelect }) => {
         <div>
             <div
                 className={`flex gap-2 items-center hover:bg-sky-500 rounded p-2 cursor-pointer
-                ${isSelected ? "bg-sky-500" : ""}`}
+                ${isSelected ? "bg-sky-500" : ""} overflow-auto`}
                 onClick={() => onSelect(conversation)}
             >
                 <div className="relative me-4">

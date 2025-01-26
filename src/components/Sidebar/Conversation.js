@@ -20,6 +20,7 @@ const Conversation = () => {
                         Authorization: `Bearer ${token}`,
                     },
                 });
+                
                 setConversations(res.data);
             } catch (error) {
                 console.log("Error fetching users", error);
@@ -33,7 +34,7 @@ const Conversation = () => {
     };
 
     return (
-        <div className="mt-6">
+        <div className="mt-6 overflow-auto">
             {conversations.map((conversation) => {
                 const isSelected = selectedConversation?._id === conversation?._id;
                 const isOnline = onlineUser.includes(conversation?._id);

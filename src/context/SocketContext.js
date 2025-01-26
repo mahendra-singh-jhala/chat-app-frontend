@@ -15,7 +15,7 @@ const SocketContextProvider = ({ children}) => {
         if (auth) {
             socketInstance = io("https://chat-app-backend-gsxr.onrender.com", {
                 query: {
-                    userId: auth.user.userId,
+                    userId: auth?.user?.userId,
                 },
             });
 

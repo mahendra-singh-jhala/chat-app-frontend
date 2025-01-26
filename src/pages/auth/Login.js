@@ -50,7 +50,7 @@ function Login() {
 
                 <form onSubmit={handleSubmit}>
                     <div className="mt-4">
-                        <label className="block mb-1 text-md text-slate-200 font-medium ">Username</label>
+                        <label className="block mb-1 text-md text-slate-200 font-medium">Username</label>
                         <input
                             type="text"
                             placeholder="Enter Username"
