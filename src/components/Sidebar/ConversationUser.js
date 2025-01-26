@@ -1,4 +1,3 @@
-
 const ConversationUser = ({ conversation, isSelected, isOnline, onSelect }) => {
     return (
         <div>

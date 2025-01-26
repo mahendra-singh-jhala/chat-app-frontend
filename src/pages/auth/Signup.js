@@ -11,6 +11,7 @@ const Signup = () => {
     const [gender, setGender] = useState("")
     const navigate = useNavigate();
 
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         

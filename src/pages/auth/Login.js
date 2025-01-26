@@ -10,6 +10,7 @@ function Login() {
     const { setAuth } = useAuth();
     const navigate = useNavigate();
 
+    // Handle form submission, authenticating the user
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -47,7 +48,6 @@ function Login() {
             <div className="w-full p-6 rounded-lg shadow-md bg-slate-500 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-0">
                 <h1 className="text-3xl font-semibold text-center mb-4 text-orange-400"> ChatApp </h1>
                 <h1 className="text-3xl font-semibold text-center mb-8"> Login </h1>
-
                 <form onSubmit={handleSubmit}>
                     <div className="mt-4">
                         <label className="block mb-1 text-md text-slate-200 font-medium">Username</label>

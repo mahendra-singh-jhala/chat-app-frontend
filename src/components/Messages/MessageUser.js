@@ -1,11 +1,15 @@
 const MessageUser = ({ message, auth, selectedConversation }) => {
+    // Function to format the message timestamp into a readable time string
     const formatTime = (timeString) => {
         const date = new Date(timeString);
         const options = { hour: "2-digit", minute: "2-digit", hour12: true };
         return date.toLocaleTimeString(undefined, options);
     };
 
+    // if the message is sent by the current user
     const fromMe = message.senderId === auth.user?.userId;
+
+    // styling based on whether the message is from the current user or not
     const chatClassName = fromMe ? "items-end justify-end" : "items-start";
     const profilePicture = fromMe ? auth.user.profilePicture : selectedConversation.profilePicture;
     const chatColor = fromMe ? "bg-sky-500" : "bg-gray-900";

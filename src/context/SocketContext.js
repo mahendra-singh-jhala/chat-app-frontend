@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
 import io from "socket.io-client"
 
+// Create a SocketContext to share socket data
 const SocketContext = createContext();
 
 const SocketContextProvider = ({ children}) => {
@@ -9,6 +10,7 @@ const SocketContextProvider = ({ children}) => {
     const [onlineUser, setOnlineUser] = useState([]);
     const { auth } = useAuth();
 
+    // useEffect to manage the socket connection based on auth status
     useEffect(() => {
         let socketInstance = null;
 

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
+// Create a ConversationContext to manage conversation data
 const ConversationContext = createContext();
 
 const ConversationProvider = ({ children }) => {

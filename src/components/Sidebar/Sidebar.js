@@ -13,6 +13,7 @@ const Sidebar = () => {
     const { setAuth } = useAuth();
     const navigate = useNavigate();
 
+    // Function to handle the search
     const handleSearchClick = (e) => {
 		e.preventDefault();
 		if (!search) return;
@@ -31,6 +32,7 @@ const Sidebar = () => {
 		} else toast.error("No such user found!");
 	};
 
+    // Function to handle the logout
     const handleLogout = () => {
         setAuth({
             user: "",

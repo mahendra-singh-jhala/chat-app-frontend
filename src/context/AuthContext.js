@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
+// Create an AuthContext, used to share authentication data
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -8,6 +9,7 @@ const AuthProvider = ({ children }) => {
         token: ""
     });
 
+    // load authentication data from localStorage
     useEffect(() => {
         const storedAuth = localStorage.getItem("auth");
         if (storedAuth) {

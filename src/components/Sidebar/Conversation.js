@@ -10,8 +10,9 @@ const Conversation = () => {
     const { conversations, setConversations, selectedConversation, setSelectedConversation } = useConversation();
     const { auth } = useAuth();
     const { onlineUser } = useSocket();
-
     const token = auth.token;
+
+    // useEffect to fetch conversations
     useEffect(() => {
         const getConversations = async () => {
             try {
@@ -29,6 +30,7 @@ const Conversation = () => {
         getConversations();
     }, [token, setConversations]);
 
+    // Function to handle selecting a conversation
     const handleSelectConversation = (conversation) => {
         setSelectedConversation(conversation);
     };
@@ -36,7 +38,9 @@ const Conversation = () => {
     return (
         <div className="mt-6 overflow-auto">
             {conversations.map((conversation) => {
+                // Checking if the current conversation is the selected one
                 const isSelected = selectedConversation?._id === conversation?._id;
+                // Checking if the current conversation's user is online
                 const isOnline = onlineUser.includes(conversation?._id);
                 return (
                     <ConversationUser

@@ -9,13 +9,12 @@ const MessageInput = () => {
     const { messages, setMessages, selectedConversation } = useConversation();
     const { auth } = useAuth()
     const [message, setMessage] = useState("");
-
     const token = auth.token;
+
+    // Function to send a message to the backend API
     const sendMessage = async (message) => {
         try {
-            const res = await axios.post(
-                `https://chat-app-backend-gsxr.onrender.com/api/message/send/${selectedConversation._id}`,
-                { message },
+            const res = await axios.post(`https://chat-app-backend-gsxr.onrender.com/api/message/send/${selectedConversation._id}`, { message },
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -24,22 +23,22 @@ const MessageInput = () => {
             );
             const data = res.data;
 
-            setMessages([...messages, data]); 
+            // Updating the messages state to include the new message
+            setMessages([...messages, data]);
             if (res.status === 200) {
-                setMessage(""); 
+                setMessage("");
             }
         } catch (error) {
             toast.error("Error sending message");
         }
     };
 
+    // Handler for form submission
     const handleSubmit = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         if (!message) return;
-        await sendMessage(message); 
+        await sendMessage(message);
     };
-
-
 
     return (
         <div className="px-4 my-3">

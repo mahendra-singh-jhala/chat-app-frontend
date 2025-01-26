@@ -11,8 +11,9 @@ const Messages = () => {
     const { messages, setMessages, selectedConversation } = useConversation();
     const { auth } = useAuth();
     const { socket } = useSocket();
-
     const token = auth.token
+
+    // useEffect to fetch messages when the component loads or selected conversation changes
     useEffect(() => {
         const getMessages = async () => {
             try {
